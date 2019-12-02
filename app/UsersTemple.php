@@ -2,13 +2,13 @@
 
 namespace App;
 
-use App\Folder;
 use App\Temple;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
-class File extends Model {
-	public function folder() {
-		return $this->belongsTo(Folder::class);
+class UsersTemple extends Model {
+	public function user() {
+		return $this->belongsTo(User::class);
 	}
 	public function temple() {
 		return $this->belongsTo(Temple::class);

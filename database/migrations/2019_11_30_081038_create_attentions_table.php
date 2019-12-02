@@ -12,6 +12,7 @@ class CreateAttentionsTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('attentions', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->time('start_time');
 			$table->time('end_time');

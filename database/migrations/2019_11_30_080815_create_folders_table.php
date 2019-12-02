@@ -12,6 +12,7 @@ class CreateFoldersTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('folders', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->string('name_fol')->unique();
 			$table->string('description_fol');

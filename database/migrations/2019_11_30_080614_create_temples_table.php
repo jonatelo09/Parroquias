@@ -12,6 +12,7 @@ class CreateTemplesTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('temples', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->string('name_temple');
 			$table->string('address');
@@ -22,7 +23,6 @@ class CreateTemplesTable extends Migration {
 			$table->string('description');
 			$table->enum('type', ['capilla', 'iglesia']);
 			$table->bigInteger('status_id')->unsigned()->nullable();
-			$table->foreign('status_id')->references('id')->on('status_legals');
 			$table->timestamps();
 		});
 	}

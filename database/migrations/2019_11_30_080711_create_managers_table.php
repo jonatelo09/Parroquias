@@ -12,12 +12,13 @@ class CreateManagersTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('managers', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->string('firstname');
 			$table->string('lastname');
 			$table->string('phone');
 			$table->string('email');
-			$table->string('image');
+			$table->string('image')->nullable();
 			$table->enum('type', ['parroco', 'vicario']);
 			$table->timestamps();
 		});

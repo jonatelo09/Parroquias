@@ -4,18 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRequirementsTable extends Migration {
+class AddForeignKeyToProps extends Migration {
 	/**
 	 * Run the migrations.
 	 *
 	 * @return void
 	 */
 	public function up() {
-		Schema::create('requirements', function (Blueprint $table) {
-			$table->engine = 'InnoDB';
-			$table->bigIncrements('id');
-			$table->string('name_require');
-			$table->timestamps();
+		Schema::table('props', function (Blueprint $table) {
+			$table->foreign('temple_id')->references('id')->on('temples');
+			$table->foreign('category_id')->references('id')->on('categories');
 		});
 	}
 
@@ -25,6 +23,8 @@ class CreateRequirementsTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::dropIfExists('requirements');
+		Schema::table('props', function (Blueprint $table) {
+			//
+		});
 	}
 }

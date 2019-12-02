@@ -12,6 +12,7 @@ class CreatePropsTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('props', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->string('name_props');
 			$table->string('description_props');
@@ -19,9 +20,7 @@ class CreatePropsTable extends Migration {
 			$table->boolean('is_reliquia');
 			$table->float('price');
 			$table->bigInteger('category_id')->unsigned()->nullable();
-			$table->foreign('category_id')->references('id')->on('categories');
 			$table->bigInteger('temple_id')->unsigned()->nullable();
-			$table->foreign('temple_id')->references('id')->on('temples');
 			$table->timestamps();
 		});
 	}

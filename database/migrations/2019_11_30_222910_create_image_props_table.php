@@ -12,10 +12,11 @@ class CreateImagePropsTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('image_props', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->string('img');
 			$table->bigInteger('prop_id')->unsigned()->nullable();
-			$table->foreign('prop_id')->references('id')->on('props');
+			//$table->foreign('prop_id')->references('id')->on('props');
 			$table->timestamps();
 		});
 	}

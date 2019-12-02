@@ -12,6 +12,7 @@ class CreateWeekDaysTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('week_days', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->string('day')->unique();
 			$table->timestamps();

@@ -12,6 +12,7 @@ class CreateStatusLegalsTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('status_legals', function (Blueprint $table) {
+			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->string('name_sta');
 			$table->timestamps();
