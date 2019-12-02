@@ -2,11 +2,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}} ">
     <div class="sidebar-brand-icon rotate-n-15">
-      <i class="fas fa-laugh-wink"></i>
+      <i class="fas fa-synagogue"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Parroquias<sup>;)</sup></div>
+    <div class="sidebar-brand-text mx-3">Parroquias<sup></sup></div>
   </a>
 
   <!-- Divider -->
@@ -36,10 +36,12 @@
       <div class="bg-white py-2 collapse-inner rounded">
         <a class="collapse-item" href="{{route('temples')}} ">Lista</a>
         <a class="collapse-item" href="{{route('temples.create')}} ">Crear</a>
+        <a class="collapse-item" href="{{route('userstemples.index')}} ">Templos Asignados</a>
+        <a class="collapse-item" href="{{route('userstemples.create')}} ">Asignar Templo</a>
       </div>
     </div>
   </li>
-
+  @if (Auth::user()->admin)
   <!-- Nav Item - Pages Collapse Menu -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -96,38 +98,33 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
       <i class="fas fa-fw fa-folder"></i>
-      <span>Pages</span>
+      <span>Folders</span>
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Login Screens:</h6>
-        <a class="collapse-item" href="login.html">Login</a>
-        <a class="collapse-item" href="register.html">Register</a>
-        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-        <div class="collapse-divider"></div>
-        <h6 class="collapse-header">Other Pages:</h6>
-        <a class="collapse-item" href="404.html">404 Page</a>
-        <a class="collapse-item" href="blank.html">Blank Page</a>
+        <h6 class="collapse-header">folder </h6>
+        <a class="collapse-item" href="{{route('folders.index')}}">Lista</a>
+        <a class="collapse-item" href="{{route('folders.create')}}">Crear</a>
       </div>
     </div>
   </li>
 
   <!-- Nav Item - Charts -->
-  <li class="nav-item">
+  <!--<li class="nav-item">
     <a class="nav-link" href="charts.html">
       <i class="fas fa-fw fa-chart-area"></i>
       <span>Charts</span></a>
   </li>
 
-  <!-- Nav Item - Tables -->
   <li class="nav-item">
     <a class="nav-link" href="tables.html">
       <i class="fas fa-fw fa-table"></i>
       <span>Tables</span></a>
-  </li>
+  </li>-->
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
+  @endif
 
   <!-- Sidebar Toggler (Sidebar) -->
   <div class="text-center d-none d-md-inline">

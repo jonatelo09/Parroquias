@@ -14,13 +14,10 @@ class CreateSchedulesTable extends Migration {
 		Schema::create('schedules', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
-			$table->string('type');
+			$table->enum('type', ['atencion', 'misa']);
 			$table->bigInteger('attention_id')->unsigned()->nullable();
-			//$table->foreign('attention_id')->references('id')->on('attentions');
 			$table->bigInteger('day_id')->unsigned()->nullable();
-			//$table->foreign('day_id')->references('id')->on('week_days');
 			$table->bigInteger('temple_id')->unsigned()->nullable();
-			//$table->foreign('temple_id')->references('id')->on('temples');
 			$table->timestamps();
 		});
 	}

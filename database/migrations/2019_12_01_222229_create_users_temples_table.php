@@ -15,9 +15,7 @@ class CreateUsersTemplesTable extends Migration {
 			$table->engine = 'InnoDB';
 			$table->bigIncrements('id');
 			$table->bigInteger('user_id')->unsigned()->nullable();
-			//$table->foreign('user_id')->references('id')->on('users');
 			$table->bigInteger('temple_id')->unsigned()->nullable();
-			//$table->foreign('temple_id')->references('id')->on('temples');
 			$table->timestamps();
 		});
 	}

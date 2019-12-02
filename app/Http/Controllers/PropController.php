@@ -42,7 +42,7 @@ class PropController extends Controller {
 		$props->quantity = $request->input('quantity');
 		$props->is_reliquia = $request->input('is_reliquia');
 		$props->price = $request->input('price');
-		$props->category_id = $request->categry_id;
+		$props->category_id = $request->category_id;
 		$props->temple_id = $request->temple_id;
 		$props->save();
 

@@ -27,6 +27,14 @@ Route::get('/temples/{temple}/edit', 'TempleController@edit')->name('temples.edi
 Route::post('/temples/{temple}/edit', 'TempleController@update')->name('temples.update'); //actualizar
 Route::post('/temples/{temple}/delete', 'TempleController@destroy')->name('temples.destroy'); // form eliminar
 
+//users_temples
+Route::get('userstemples', 'UserTempleController@index')->name('userstemples.index'); //listado
+Route::get('/userstemples/create', 'UserTempleController@create')->name('userstemples.create'); //formulario
+Route::post('/userstemples', 'UserTempleController@store')->name('userstemples.store'); //registrar
+Route::get('/userstemples/{userstemple}/edit', 'UserTempleController@edit')->name('userstemples.edit'); //formulario edicion
+Route::post('/userstemples/{userstemple}/edit', 'UserTempleController@update')->name('userstemples.update'); //actualizar
+Route::post('/userstemples/{userstemple}/delete', 'UserTempleController@destroy')->name('userstemples.destroy'); // form eliminar
+
 //MANAGERS
 Route::get('managers', 'ManagerController@index')->name('managers.index'); //listado
 Route::get('/managers/create', 'ManagerController@create')->name('managers.create'); //formulario
@@ -51,3 +59,11 @@ Route::post('/categories', 'CategoryController@store')->name('categories.store')
 Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit'); //formulario edicion
 Route::post('/categories/{category}/edit', 'CategoryController@update')->name('categories.update'); //actualizar
 Route::post('/categories/{category}', 'CategoryController@destroy')->name('categories.destroy'); // form eliminar
+
+//FOLDERS
+Route::get('folders', 'FolderController@index')->name('folders.index'); //listado
+Route::get('/folders/create', 'FolderController@create')->name('folders.create'); //formulario
+Route::post('/folders', 'FolderController@store')->name('folders.store'); //registrar
+Route::get('/folders/{folder}/edit', 'FolderController@edit')->name('folders.edit'); //formulario edicion
+Route::post('/folders/{folder}/edit', 'FolderController@update')->name('folders.update'); //actualizar
+Route::post('/folders/{folder}', 'FolderController@destroy')->name('folders.destroy'); // form eliminar

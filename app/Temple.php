@@ -9,6 +9,7 @@ use App\UsersTemple;
 use Illuminate\Database\Eloquent\Model;
 
 class Temple extends Model {
+	protected $fillable = ['name_temple', 'address', 'email', 'phone', 'type'];
 	public function props() {
 		return $this->hasMany(Prop::class);
 	}

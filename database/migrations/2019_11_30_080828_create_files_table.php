@@ -17,9 +17,7 @@ class CreateFilesTable extends Migration {
 			$table->string('name_file');
 			$table->string('description_file');
 			$table->bigInteger('folder_id')->unsigned()->nullable();
-			//$table->foreign('folder_id')->refereces('id')->on('folders');
 			$table->bigInteger('temple_id')->unsigned()->nullable();
-			//$table->foreign('temple_id')->references('id')->on('temples');
 			$table->timestamps();
 		});
 	}

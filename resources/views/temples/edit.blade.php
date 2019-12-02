@@ -41,7 +41,7 @@
 			<div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
 				<label class="form-control-label" for="tipo">Tipo</label>
-                <select class="form-control" name="type" value="{{old('type','$temple->type')}} ">
+                <select class="form-control" name="type" value="{{old('type','$temple->type')}}">
                 	<option value="capilla">Capilla</option>
                 	<option value="iglesia">Iglesia</option>
                 </select>

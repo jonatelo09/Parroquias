@@ -46,6 +46,7 @@ class TempleController extends Controller {
 		$temples->description = $request->input('description');
 		$temples->type = $request->input('type');
 		$temples->status_id = $request->status_id;
+		$temples->manager_id = $request->manager_id;
 		$temples->save();
 
 		return redirect()->route('temples')->with('info', 'Templo Guardado con Éxito!');
@@ -83,7 +84,7 @@ class TempleController extends Controller {
 	 */
 	public function update(Request $request, Temple $temple) {
 		$temple->update($request->all());
-		return redirect()->route('temples.index', $temple->id)->with('info', 'Templo actualizado con éxito!');
+		return redirect()->route('temples', $temple->id)->with('info', 'Templo actualizado con éxito!');
 	}
 
 	/**
